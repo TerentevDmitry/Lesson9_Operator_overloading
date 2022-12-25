@@ -1,4 +1,4 @@
-﻿// 09_01.cpp : Сравнения в дробях
+﻿// 09_01.cpp : 
 
 #include <iostream>
 
@@ -23,7 +23,7 @@ public:
 		denominator_ = denominator;
 	}
 
-	bool operator == (const Fraction &other)
+	bool operator == (const Fraction& other)
 	{
 		foo(other);
 		return newNumerator1_ == Fraction::newNumerator2_;
@@ -60,7 +60,7 @@ int main()
 	setlocale(LC_ALL, "Russian"); //Корректное отображение Кириллицы
 	system("chcp 1251");
 	std::cout << std::endl;
-	 
+
 	Fraction f1(4, 3);
 	Fraction f2(6, 11);
 
