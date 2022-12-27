@@ -10,7 +10,7 @@ private:
 	int prodNumeratorDenominator12_ = 0;
 	int prodNumeratorDenominator21_ = 0;
 
-	void foo(const Fraction& other)
+	void saveCrossProducts(const Fraction& other)
 	{
 		prodNumeratorDenominator12_ = this->numerator_ * other.denominator_;
 		prodNumeratorDenominator21_ = other.numerator_ * this->denominator_;
@@ -25,7 +25,7 @@ public:
 
 	bool operator == (const Fraction &other)
 	{
-		foo(other);
+		saveCrossProducts(other);
 		return prodNumeratorDenominator12_ == Fraction::prodNumeratorDenominator21_;
 	}
 
