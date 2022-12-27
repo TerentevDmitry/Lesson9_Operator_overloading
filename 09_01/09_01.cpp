@@ -7,13 +7,13 @@ class Fraction
 private:
 	int numerator_ = 0;
 	int denominator_ = 0;
-	int newNumerator1_ = 0;
-	int newNumerator2_ = 0;
+	int prodNumeratorDenominator12_ = 0;
+	int prodNumeratorDenominator21_ = 0;
 
 	void foo(const Fraction& other)
 	{
-		newNumerator1_ = this->numerator_ * other.denominator_;
-		newNumerator2_ = other.numerator_ * this->denominator_;
+		prodNumeratorDenominator12_ = this->numerator_ * other.denominator_;
+		prodNumeratorDenominator21_ = other.numerator_ * this->denominator_;
 	}
 
 public:
@@ -26,32 +26,32 @@ public:
 	bool operator == (const Fraction &other)
 	{
 		foo(other);
-		return newNumerator1_ == Fraction::newNumerator2_;
+		return prodNumeratorDenominator12_ == Fraction::prodNumeratorDenominator21_;
 	}
 
 	bool operator != (const Fraction& other)
 	{
-		return newNumerator1_ != newNumerator2_;
+		return prodNumeratorDenominator12_ != prodNumeratorDenominator21_;
 	}
 
 	bool operator < (const Fraction& other)
 	{
-		return newNumerator1_ < newNumerator2_;
+		return prodNumeratorDenominator12_ < prodNumeratorDenominator21_;
 	}
 
 	bool operator > (const Fraction& other)
 	{
-		return newNumerator1_ > newNumerator2_;
+		return prodNumeratorDenominator12_ > prodNumeratorDenominator21_;
 	}
 
 	bool operator <= (const Fraction& other)
 	{
-		return newNumerator1_ <= newNumerator2_;
+		return prodNumeratorDenominator12_ <= prodNumeratorDenominator21_;
 	}
 
 	bool operator >= (const Fraction& other)
 	{
-		return newNumerator1_ >= newNumerator2_;
+		return prodNumeratorDenominator12_ >= prodNumeratorDenominator21_;
 	}
 };
 
